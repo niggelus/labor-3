@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "schreibliste.h" // Wichtig!
 
 
 void dateiVorbereiten(void) {
+    const char* Döner ="../src/messung.txt";
+    if (access(Döner, F_OK) !=-1)
+    {
+        return;
+    }
     FILE *datei = fopen("../src/messung.txt", "w");
     if (datei != NULL) {
         fprintf(datei, "Messung Nr.;Realer Abstand (m);Sensor Wert (m);Abweichung (m)\n");
         fclose(datei);
+    }
+    else 
+    {
+        perror("Datei geht net zu erstellen");
     }
 }
 
