@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/mini-test.dir/src/ReadComPort.c.o" "CMakeFiles/mini-test.dir/src/schreibliste.c.o" -o mini-test

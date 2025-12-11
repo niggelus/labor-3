@@ -1,0 +1,4 @@
+/Users/nickpfannenstein/Downloads/Labor-Info-3-main/c-projekt/build/CMakeFiles/mini-test.dir
+/Users/nickpfannenstein/Downloads/Labor-Info-3-main/c-projekt/build/CMakeFiles/ohne-test.dir
+/Users/nickpfannenstein/Downloads/Labor-Info-3-main/c-projekt/build/CMakeFiles/edit_cache.dir
+/Users/nickpfannenstein/Downloads/Labor-Info-3-main/c-projekt/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/ohne-test.dir/src/SImuliert.c.o" "CMakeFiles/ohne-test.dir/src/schreibliste.c.o" -o ohne-test
