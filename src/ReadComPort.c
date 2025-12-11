@@ -110,11 +110,8 @@ int main() {
                    realerAbstand, sensorWert, abweichung);
 
 
-            char outputLine[512];
-            snprintf(outputLine, sizeof(outputLine), "%d;%.4f;%.4f;%.4f", 
-                     i, realerAbstand, sensorWert, abweichung);
             
-            schreibeZeile(outputLine);
+            schreibeZeile(i, realerAbstand, sensorWert, abweichung);
         }
     }
 
