@@ -5,6 +5,6 @@
 void dateiVorbereiten(void);
 
 // Funktion, um eine Textzeile anzuhängen
-void schreibeZeile(const char* text);
+void schreibeZeile(int nr, double real, double sensor, double abweichung);
 
 #endif

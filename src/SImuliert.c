@@ -42,15 +42,11 @@ int main()
         printf("Simuliert: Real=%.4f m | Sensor=%.4f m | Diff=%.4f m\n", 
                realerAbstand, sensorWert, abweichung);
 
-        // 5. Speichern
-        char buffer[256];
-        memset(buffer, 0, sizeof(buffer));
         
         
-        snprintf(buffer, sizeof(buffer), "%d;%.4f;%.4f;%.4f", 
-                 i, realerAbstand, sensorWert, abweichung);
-                 
-        schreibeZeile(buffer);
+        
+        
+        schreibeZeile(i, realerAbstand, sensorWert, abweichung);
     }
 
     printf("\nSimulation abgeschlossen. Daten gespeichert.\n");
