@@ -24,6 +24,7 @@ add_executable(LaborProgramm
     src/ReadComPort.c 
     src/schreibliste.c
     src/datenbank.c
+    src/lookup.c
 )
 
 # Bibliothek verlinken
