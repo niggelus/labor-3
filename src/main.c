@@ -2,30 +2,34 @@
 #include <stdlib.h>
 #include "funktionen.h"   
 #include "schreibliste.h" 
-#include "datenbank.h"    
+#include "datenbank.h"  
+#include "lookup.h"  
 
 int main() {
     int wahl = 0;
 
-    
+    // Initialisierungen
     dateiVorbereiten();
     printf("Info: 'messung.txt' wurde initialisiert.\n");
-
     
-    if (datenbank_initialisieren() != 0) {
-        printf("Warnung: Datenbank konnte nicht gestartet werden.\n");
-        
+    // Lookup-Tabelle laden (Wichtig für die Interpolation!)
+    if (ladeLookupTabelle("messung_1.csv") != 0) {
+        printf("Warnung: 'messung_1.csv' konnte nicht geladen werden. Interpolation wird 0 ergeben.\n");
     }
 
-    
+    // Datenbank starten
+    if (datenbank_initialisieren() != 0) {
+        printf("Warnung: Datenbank konnte nicht gestartet werden.\n");
+    }
+
     while (1) {
         printf("\n=========================================\n");
         printf("           HAUPTMENÜ                     \n");
         printf("=========================================\n");
-        printf("1. Simulation starten du huan\n");
-        printf("2. Messung Sensor \n");
-        printf("3. Daten csv\n");
-        printf("4. ende\n");
+        printf("1. Simulation starten (Aufgabe 1)\n");
+        printf("2. Messung Sensor & Interpolation (Aufgabe 2)\n");
+        printf("3. Datenbank als CSV exportieren\n");
+        printf("4. Beenden\n");
         printf("-----------------------------------------\n");
         printf("Ihre Wahl: ");
 
@@ -34,7 +38,7 @@ int main() {
             printf("Ungültige Eingabe! Bitte Zahl wählen.\n");
             continue;
         }
-        while(getchar() != '\n'); 
+        while(getchar() != '\n'); // Puffer leeren
 
         switch (wahl) {
             case 1:
@@ -42,7 +46,8 @@ int main() {
                 break;
 
             case 2:
-                starteMessung();   
+                // HIER: Aufruf der neuen Funktion aus ReadComPort.c
+                starteMessung(); 
                 break;
 
             case 3:
@@ -50,7 +55,6 @@ int main() {
                 break;
 
             case 4:
-                
                 datenbank_schliessen();
                 printf("Programm wird beendet. Auf Wiedersehen!\n");
                 return 0;
